@@ -1,0 +1,68 @@
+swagger: '2.0'
+info:
+  title: Power Platform CLI for Azure Functions Template
+  version: '1.0'
+basePath: /api
+schemes:
+  - https
+paths:
+  /dotnetversion:
+    get:
+      description: Get the version of the .NET Core SDK
+      responses:
+        '200':
+          description: success
+          schema:
+            type: object
+            properties:
+              result:
+                type: string
+              version:
+                type: string
+  /pacversion:
+    get:
+      description: Get the version of the Power Apps CLI
+      responses:
+        '200':
+          description: success
+          schema:
+            type: object
+            properties:
+              result:
+                type: string
+              version:
+                type: string
+  /pacauthtest:
+    post:
+      description: Test the authentication to Power Apps
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              applicationId:
+                type: string
+                description: The application ID.
+              clientSecret:
+                type: string
+                description: The client secret. 
+              tenant:
+                type: string
+                description: The tenant ID.
+      responses:
+        '200':
+          description: success
+          schema:
+            type: object
+            properties:
+              result:
+                type: string
+        '500':
+          description: failed
+          schema:
+            type: object
+            properties:
+              result:
+                type: string
