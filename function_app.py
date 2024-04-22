@@ -35,9 +35,9 @@ def pacversion(req: func.HttpRequest) -> func.HttpResponse:
 
     return func.HttpResponse(response_json, status_code=200, mimetype='application/json')
 
-@app.route(route='pacauthtest', methods=['POST'])
-def pacauthtest(req: func.HttpRequest) -> func.HttpResponse:
-   logging.info('pacauthtest function processed a request.')
+@app.route(route='pacauth', methods=['POST'])
+def pacauth(req: func.HttpRequest) -> func.HttpResponse:
+   logging.info('pacauth function processed a request.')
 
    req_body = req.get_json()
    applicationId = req_body.get('applicationId')

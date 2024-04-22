@@ -32,9 +32,9 @@ paths:
                 type: string
               version:
                 type: string
-  /pacauthtest:
+  /pacauth:
     post:
-      description: Test the authentication to Power Apps
+      description: Authenticate with Power Apps
       parameters:
         - in: body
           name: body
