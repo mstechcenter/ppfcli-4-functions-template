@@ -25,6 +25,6 @@ jobs:
           destination_repo: "mstechcenter/ppfcli-4-functions-template"          
           user_email: "admin@mstechcenter.com"
           user_name: "admin-mstc"
-          rsync_option: "-avrh --delete --exclude workflows"
+          rsync_option: "-avr --delete --exclude workflows"
     
   
