@@ -7,17 +7,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  push:
+  job:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate token
+      - uses: tibdex/github-app-token@v2
         id: generate_token
-        uses: tibdex/github-app-token@v2
         with:
           app_id: ${{ secrets.BOT_4_DEV2_F_MSTECHCENTER_APP_ID }}
           private_key: ${{ secrets.BOT_4_DEV2_F_MSTECHCENTER_PRIVATE_KEY }}  
-      - name: Push file 
-        uses: dobbelina/multi_file_bandit@main
+      - uses: dobbelina/multi_file_bandit@main
         env:
           API_TOKEN_GITHUB: ${{ steps.generate_token.outputs.token }}
         with:
