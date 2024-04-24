@@ -48,7 +48,8 @@ def pacauth(req: func.HttpRequest) -> func.HttpResponse:
    result = subprocess.run(command_to_run, capture_output=True, text=True)
    if result.returncode == 0:
       response_data = {
-         'result': 'success'
+         'result': 'success',
+         'message': result.stdout
       }
       response_json = json.dumps(response_data)
 
@@ -56,7 +57,8 @@ def pacauth(req: func.HttpRequest) -> func.HttpResponse:
 
    else:
       response_data = {
-         'result': 'failed'
+         'result': 'failed',
+         'message': result.stdout
       }
       response_json = json.dumps(response_data)
 

@@ -59,10 +59,14 @@ paths:
             properties:
               result:
                 type: string
+              message:
+                type: string
         '500':
           description: failed
           schema:
             type: object
             properties:
               result:
+                type: string
+              message:
                 type: string
